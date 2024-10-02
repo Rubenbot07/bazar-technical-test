@@ -8,6 +8,9 @@ export function Search () {
     }
     return (
         <form>
+            <Link to='/'>
+                <div className="logo">Logo</div>
+            </Link>
             <input type="text" onChange={handleChange} />
             <Link to={`/items?search=${searchInput}`}>
                 <button type="submit">Search</button>

@@ -1,6 +1,7 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Search } from '../../components/Search';
 import { useGetUrlData } from '../../hooks/useGetUrlData';
+import './Results.css'
 export function Results ({ productList }) {
     const { filter, itemName , id} = useGetUrlData(productList)
     console.log(id)
@@ -15,10 +16,10 @@ export function Results ({ productList }) {
                         
                             filter.map(item => {
                                 return (
-                                    <Link to={`/items/${item.id}`}>
-                                        <div className="item-container" key={item.id}>
+                                    <Link to={`/items/${item.id}`} key={item.id}>
+                                        <div className="item-container" >
                                             <div className='img-container'>
-                                                <img src={item.thumbnail} alt="" />
+                                                <img src={item.thumbnail} alt={item.description} />
                                             </div>
                                             <div className="info-container">
                                                 <span>{item.title}</span>

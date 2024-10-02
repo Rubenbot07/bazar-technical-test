@@ -8,11 +8,12 @@ export function useGetUrlData (productList) {
     if(id) {
         filter = productList.filter(item => item.id == id)
         console.log(filter)
-    } 
-    filter = productList.filter(item => 
-        item.title.toUpperCase().includes(itemName.toUpperCase()) || 
-        item.category.includes(itemName)
-    )
+    } else {
+        filter = productList.filter(item => 
+            item.title.toUpperCase().includes(itemName.toUpperCase()) || 
+            item.category.includes(itemName)
+        )
+    }
 
     return { filter, itemName, id }
 }
