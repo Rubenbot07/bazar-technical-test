@@ -8,7 +8,7 @@ const AppRoutes = () => {
   const routes = useRoutes([
     { path: '/', element: <Home /> },
     { path: '/items', element: <Results /> },
-    { path: '/item/:id', element: <ProductDetail /> }
+    { path: '/items/:id', element: <ProductDetail /> }
   ])
   return routes
 }
