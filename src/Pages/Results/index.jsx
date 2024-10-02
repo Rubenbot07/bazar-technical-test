@@ -1,19 +1,13 @@
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Search } from '../../components/Search';
+import { useGetUrlData } from '../../hooks/useGetUrlData';
 export function Results ({ productList }) {
-
-    console.log(productList)
-    const location = useLocation();
-    const searchParams = new URLSearchParams(location.search);
-    const itemName = searchParams.get('search') || '';
-    const filter = productList.filter(item => 
-        item.title.toUpperCase().includes(itemName.toUpperCase()) || 
-        item.category.includes(itemName)
-    );
+    const { filter, itemName , id} = useGetUrlData(productList)
+    console.log(id)
     return (
         <section className='results'>
             <Search />
-            <p>{`Search results of "${itemName}": ${filter.length}`}</p>
+            <p>{`Search results of "${itemName}"`}</p>
             <div className='results-container'>
                 {
                     itemName.length
@@ -21,19 +15,21 @@ export function Results ({ productList }) {
                         
                             filter.map(item => {
                                 return (
-                                    <div className="item-container" key={item.id}>
-                                        <div className='img-container'>
-                                            <img src={item.thumbnail} alt="" />
-                                        </div>
-                                        <div className="info-container">
-                                            <span>{item.title}</span>
-                                            <p>{item.description}</p>
-                                            <div className='info__price-rating'>
-                                                <span>{`${item.price}$`}</span>
-                                                <span>{item.rating}</span>
+                                    <Link to={`/items/${item.id}`}>
+                                        <div className="item-container" key={item.id}>
+                                            <div className='img-container'>
+                                                <img src={item.thumbnail} alt="" />
+                                            </div>
+                                            <div className="info-container">
+                                                <span>{item.title}</span>
+                                                <p>{item.description}</p>
+                                                <div className='info__price-rating'>
+                                                    <span>{`${item.price}$`}</span>
+                                                    <span>{item.rating}</span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 )
                             })
                     )
