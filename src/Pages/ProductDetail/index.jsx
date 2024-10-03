@@ -1,5 +1,6 @@
 import { useGetUrlData } from "../../hooks/useGetUrlData"
 import { Search } from "../../components/Search"
+import { BackButton } from "../../utils"
 import './ProductDetail.css'
 
 export function ProductDetail ({productList}) {
@@ -8,6 +9,7 @@ export function ProductDetail ({productList}) {
     return (
         <section className="product-detail">
             <Search />
+            <BackButton />
             <div className="product-detail__container">
                 <div className="product-detail__images-container">
                     <div className="product-detail__main-img__container">

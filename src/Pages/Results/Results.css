@@ -22,7 +22,14 @@
     padding: 10px;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
-  
+
+  .top-info {
+    display: flex;
+    align-items: center;
+    padding: 4px 10px;
+    gap: 20px;
+  }
+
   .item-container {
     display: flex;
     align-items: center;
@@ -66,3 +73,4 @@
     display: flex;
     justify-content: space-between;
   }
+

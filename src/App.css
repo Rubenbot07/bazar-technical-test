@@ -22,3 +22,9 @@ form {
 main .logo {
   visibility: hidden;
 }
+.back-button {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  font-size: 1.3rem;
+}

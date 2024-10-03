@@ -18,6 +18,12 @@
     gap: 30px;
     align-items: center;
 }
+
+.product-detail .back-button {
+    position: absolute;
+    left: 10px;
+}
+
 .product-detail__images-container {
     display: flex;
     justify-content: space-between;

@@ -1,14 +1,19 @@
 import { Link } from 'react-router-dom';
+import { BackButton } from '../../utils'
 import { Search } from '../../components/Search';
 import { useGetUrlData } from '../../hooks/useGetUrlData';
+
 import './Results.css'
 export function Results ({ productList }) {
     const { filter, itemName , id} = useGetUrlData(productList)
-    console.log(id)
+
     return (
         <section className='results'>
             <Search />
-            <p>{`Search results of "${itemName}"`}</p>
+            <div className='top-info'>
+                <BackButton />
+                <p>{`Search results of "${itemName}"`}</p>
+            </div>
             <div className='results-container'>
                 {
                     itemName.length
