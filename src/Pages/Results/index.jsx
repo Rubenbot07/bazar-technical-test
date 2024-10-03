@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
-import { BackButton } from '../../utils'
+import { BackButton } from '../../utils/BackButton'
 import { Search } from '../../components/Search';
 import { useGetUrlData } from '../../hooks/useGetUrlData';
+import { StarRating } from '../../utils/StarRating';
 
 import './Results.css'
 export function Results ({ productList }) {
@@ -31,7 +32,7 @@ export function Results ({ productList }) {
                                                 <p>{item.description}</p>
                                                 <div className='info__price-rating'>
                                                     <span>{`${item.price}$`}</span>
-                                                    <span>{item.rating}</span>
+                                                    <StarRating rating={item.rating}/>
                                                 </div>
                                             </div>
                                         </div>

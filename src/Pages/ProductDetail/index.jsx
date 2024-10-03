@@ -1,6 +1,7 @@
 import { useGetUrlData } from "../../hooks/useGetUrlData"
 import { Search } from "../../components/Search"
-import { BackButton } from "../../utils"
+import { BackButton } from "../../utils/BackButton"
+import { StarRating } from '../../utils/StarRating'
 import './ProductDetail.css'
 
 export function ProductDetail ({productList}) {
@@ -34,7 +35,7 @@ export function ProductDetail ({productList}) {
                             <span className="price">{`${product?.price}$`}</span>
                             <span className="stock">{`${product?.stock} Available`}</span>
                         </div>
-                        <span>{product?.rating}</span>
+                        <StarRating rating={product.rating}/>
                     </div>
                 </div>
                 <div className="product-detail__description">

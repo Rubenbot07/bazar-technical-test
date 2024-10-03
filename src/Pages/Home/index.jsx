@@ -5,6 +5,9 @@ export function Home () {
             <header>
                 <h1>Bazar online</h1>
                 <Search />
+                <button>
+
+                </button>
             </header>
         </main>
     )
